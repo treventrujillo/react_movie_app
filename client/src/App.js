@@ -7,7 +7,7 @@ class App extends React.Component {
     return (
       <div>
         <Container>
-        
+          <MovieList />
         </Container>
       </div>
       
