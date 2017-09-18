@@ -40,7 +40,7 @@ class MovieForm extends React.Component {
     data.append('summary', summary)
     data.append('release', release)
     axios.post('/api/movies', data)
-      .then( res=> {
+      .then( res => {
         this.props.addMovie(res.data)
         this.setState(
           {
@@ -50,7 +50,6 @@ class MovieForm extends React.Component {
             release: ''
           });
       })
-
   }
 
   render() {
@@ -108,17 +107,10 @@ class MovieForm extends React.Component {
             placeholder="Enter A Summary..."
             onChange={this.handleChange}
           />
+          <Form.Button style={{ margin: "10px" }}>
+            Submit
+          </Form.Button>
         </Form>
-        <Form.Button
-          style={
-            {
-              margin: "10px"
-            }
-          }
-          type="submit"
-        >
-          Submit
-        </Form.Button>
       </div>
     );
   }

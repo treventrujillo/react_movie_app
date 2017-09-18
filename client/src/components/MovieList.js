@@ -19,6 +19,7 @@ class MovieList extends React.Component {
         <Header as="h1">Movie List</Header>
         <hr />
         <MovieForm addMovie={this.addMovie} />
+        { movieList } 
       </div>
     );
   }
