@@ -8,19 +8,20 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 class MovieForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      startDate: moment()
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
   state = {
      title: '', 
      file: '', 
      summary: '', 
      release: '' 
     }
-  constructor(props) {
-    super(props)
-    this.state = {
-      startDate: moment()
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
 
   onDrop = (files) => {
     this.setState({ file: files[0] })
@@ -114,7 +115,7 @@ class MovieForm extends React.Component {
               margin: "10px"
             }
           }
-          onClick={this.handleSubmit}
+          type="submit"
         >
           Submit
         </Form.Button>
